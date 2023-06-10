@@ -1,0 +1,11 @@
+# Credenciais
+projeto_gcp_credentials.json
+
+# Terraform configuration
+.terraform.lock.hcl
+.terraform/
+terraform.tfstate
+
+# Editor configuration
+.idea/
+.vscode/

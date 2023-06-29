@@ -9,3 +9,7 @@ variable "credentials" {
 variable "topic_schema" {
   default = "schema.json"
 }
+
+variable "table_schema" {
+  default = "table_schema.json"
+}

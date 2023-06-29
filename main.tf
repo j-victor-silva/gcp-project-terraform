@@ -43,3 +43,22 @@ resource "google_pubsub_subscription" "subscription_test" {
     category = "terraform"
   }
 }
+
+resource "google_bigquery_dataset" "raw" {
+  dataset_id = "raw"
+  friendly_name = "raw"
+  description = "Tabela onde irá conter os dados de streaming"
+  location = "US"
+  default_table_expiration_ms = 3600000
+}
+
+resource "google_bigquery_table" "landing" {
+  dataset_id = google_bigquery_dataset.raw.dataset_id
+  table_id = "landing"
+
+  time_partitioning {
+    type = "DAY"
+  }
+
+  schema = file(var.table_schema)
+}

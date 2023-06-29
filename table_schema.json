@@ -1,0 +1,167 @@
+[
+  {
+    "name": "user_id",
+    "type": "STRING"    
+  },
+  {
+    "name": "ip",
+    "type": "STRING"    
+  },
+  {
+    "name": "action",
+    "type": "STRING"    
+  },
+  {
+    "name": "traits",
+    "type": "STRUCT",
+    "fields": [
+      {
+        "name": "name",
+        "type": "STRING"          
+      },
+      {
+        "name": "email",
+        "type": "STRING"          
+      },
+      {
+        "name": "birthday",
+        "type": "DATE"          
+      },
+      {
+        "name": "created_at",
+        "type": "TIMESTAMP"          
+      },
+      {
+        "name": "phone",
+        "type": "STRING"          
+      },
+      {
+        "name": "user_id",
+        "type": "STRING"          
+      },
+      {
+        "name": "timezone",
+        "type": "STRING"          
+      },
+      {
+        "name": "address",
+        "type": "STRUCT",
+        "fields": [
+          {
+            "name": "brand",
+            "type": "STRING"                
+          },
+          {
+            "name": "department",
+            "type": "STRING"                
+          },
+          {
+            "name": "role",
+            "type": "STRING"                
+          },
+          {
+            "name": "permissions",
+            "type": "STRING",
+            "mode": "REPEATED"
+          }
+        ]
+      },
+      {
+        "name": "gender",
+        "type": "STRING"          
+      }
+    ]
+  },
+  {
+    "name": "properties",
+    "type": "STRUCT",
+    "fields": [
+      {
+        "name": "post_action",
+        "type": "STRING"          
+      },
+      {
+        "name": "post_id",
+        "type": "STRING"          
+      },
+      {
+        "name": "post_name",
+        "type": "STRING"          
+      },
+      {
+        "name": "post_type",
+        "type": "STRING"          
+      },
+      {
+        "name": "post_description",
+        "type": "STRING"          
+      },
+      {
+        "name": "post_url",
+        "type": "STRING"          
+      },
+      {
+        "name": "post_owner",
+        "type": "STRING"          
+      },
+      {
+        "name": "post_status",
+        "type": "STRING"          
+      }
+    ]
+  },
+  {
+    "name": "browser",
+    "type": "STRUCT",
+    "fields": [
+      {
+        "name": "version",
+        "type": "STRING"          
+      },
+      {
+        "name": "value",
+        "type": "STRING"          
+      }
+    ]
+  },
+  {
+    "name": "device",
+    "type": "STRUCT",
+    "fields": [
+      {
+        "name": "type",
+        "type": "STRING"          
+      },
+      {
+        "name": "token",
+        "type": "STRING"          
+      },
+      {
+        "name": "enable",
+        "type": "BOOLEAN"          
+      }
+    ]
+  },
+  {
+    "name": "request",
+    "type": "STRUCT",
+    "fields": [
+      {
+        "name": "value",
+        "type": "STRING"          
+      },
+      {
+        "name": "timestamp",
+        "type": "TIMESTAMP"          
+      }
+    ]
+  },
+  {
+    "name": "timestamp",
+    "type": "TIMESTAMP"    
+  },
+  {
+    "name": "ingestion_at",
+    "type": "TIMESTAMP"    
+  }
+]

@@ -12,6 +12,10 @@
     "type": "STRING"    
   },
   {
+    "name": "brand",
+    "type": "STRING"
+  },
+  {
     "name": "traits",
     "type": "STRUCT",
     "fields": [
@@ -44,7 +48,11 @@
         "type": "STRING"          
       },
       {
-        "name": "address",
+        "name": "gender",
+        "type": "STRING"          
+      },
+      {
+        "name": "info",
         "type": "STRUCT",
         "fields": [
           {
@@ -65,10 +73,6 @@
             "mode": "REPEATED"
           }
         ]
-      },
-      {
-        "name": "gender",
-        "type": "STRING"          
       }
     ]
   },
@@ -137,7 +141,7 @@
         "type": "STRING"          
       },
       {
-        "name": "enable",
+        "name": "enabled",
         "type": "BOOLEAN"          
       }
     ]

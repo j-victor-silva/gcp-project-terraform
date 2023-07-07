@@ -1,0 +1,62 @@
+syntax = "proto3";
+message Event {
+  string user_id = 1;
+  string ip = 2;
+  string action = 3;
+  string brand = 4;
+
+  Traits traits = 5;
+  Properties properties = 6;
+  Browser browser = 7;
+  Device device = 8;
+  Request request = 9;
+
+  message Traits {
+    string name = 1;
+    string email = 2;
+    string birthday = 3;
+    string created_at = 4;
+    string phone = 5;
+    string user_id = 6;
+    string timezone = 7;
+    string gender = 8;
+    Info info = 9;
+    
+    message Info {
+      string brand = 1;
+      string department = 2;
+      string role = 3;
+      repeated string permissions = 4;
+    }
+  }
+
+  message Properties {
+    string post_action = 1;
+    string post_id = 2;
+    string post_name = 3;
+    string post_type = 4;
+    string post_description = 5;
+    string post_url = 6;
+    string post_owner = 7;
+    string post_status = 8;
+  }
+
+  message Browser {
+    string version = 1;
+    string value = 2;
+  }
+
+  message Device {
+    string type = 1;
+    string token = 2;
+    bool enabled = 3;
+  }
+
+  message Request {
+    string value = 1;
+    string timestamp = 2;
+  }
+
+  string timestamp = 10;
+  string ingestion_at = 11;
+}

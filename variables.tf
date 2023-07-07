@@ -7,9 +7,13 @@ variable "credentials" {
 }
 
 variable "topic_schema" {
-  default = "schema.json"
+  default = "schema.proto"
 }
 
 variable "table_schema" {
   default = "table_schema.json"
+}
+
+variable "dataflow_schema" {
+  default = "DataflowTemplate.java"
 }

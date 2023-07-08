@@ -16,13 +16,13 @@ provider "google" {
 }
 
 resource "google_pubsub_schema" "topic_schemas" {
-  name       = "terraform-topic-schema"
+  name       = var.topic_schema_name
   type       = "PROTOCOL_BUFFER"
   definition = file(var.topic_schema)
 }
 
 resource "google_pubsub_topic" "main_topic" {
-  name = "terraform-topic"
+  name = var.topic_name
 
   depends_on = [google_pubsub_schema.topic_schemas]
   schema_settings {
@@ -35,7 +35,7 @@ resource "google_pubsub_topic" "main_topic" {
 }
 
 resource "google_pubsub_topic" "dead_message_topic" {
-  name = "terraform-dead-message-topic"
+  name = var.topic_dead_message_name
 
   labels = {
     category = "terraform"
@@ -70,17 +70,15 @@ resource "google_pubsub_subscription" "dead_message_sub" {
 }
 
 resource "google_bigquery_dataset" "raw" {
-  dataset_id                  = "raw"
-  friendly_name               = "raw"
-  description                 = "Tabela onde irá conter os dados de streaming"
+  dataset_id                  = var.dataset_name
+  friendly_name               = var.dataset_name
+  description                 = "Dataset onde irá conter a tabela de streaming"
   location                    = "US"
-  default_table_expiration_ms = 3600000
 }
 
 resource "google_bigquery_table" "landing" {
   dataset_id          = google_bigquery_dataset.raw.dataset_id
   table_id            = "landing"
-  deletion_protection = false
 
   time_partitioning {
     type = "DAY"

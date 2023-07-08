@@ -14,6 +14,22 @@ variable "table_schema" {
   default = "table_schema.json"
 }
 
-variable "dataflow_schema" {
-  default = "DataflowTemplate.java"
+variable "topic_schema_name" {
+  default = "terraform-topic-schema"
+}
+
+variable "topic_name" {
+  default = "terraform-topic"
+}
+
+variable "topic_dead_message_name" {
+  default = "terraform-topic-dead-message"
+}
+
+variable "dataset_name" {
+  default = "streaming-dataset"
+}
+
+variable "table_name" {
+  default = "streaming-table"
 }
